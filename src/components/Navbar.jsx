@@ -1,35 +1,56 @@
-import logo from "../assets/logo2.png";
+import logo from "../assets/logo.png";
+
+import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
+  const menuItems = [
+    {
+      name: "Closets",
+      submenu: ["Walk-In Closets", "Walk-In Closets", "Walk-In Closets"],
+    },
+    {
+      name: "Living Areas",
+      submenu: [
+        "Home Office",
+        "Entryway Storage",
+        "Morphy Beds",
+        "Lundary Rooms",
+        "Kitchen Pantry",
+        "Media",
+      ],
+    },
+    { name: "Garages" },
+    { name: "Gallery" },
+  ];
+
   return (
-    <nav className="sticky mt-5 border-b-2 border-blue-900 px-3.5 flex justify-between items-center w-full  mx-auto">
-      <div className="w-7xl mx-auto">
-        <div className="flex justify-end p-2 gap-4 text-blue-900 text-2xl">
-          <h2 dir="rtl" className="">
-            (416) 901-2567
-          </h2>
-          <h2>| </h2>
-          <h2>Contact</h2>
-        </div>
-        <div className="flex justify-between items-center ">
-          <div className="">
-            <img src={logo} className="w-90 pb-3 mt-[-30px]" alt="" />
-          </div>
-          <div></div>
-          <div className=" text-xl">
-            <ul className="flex justify-center items-center gap-10 text-blue-900 ">
-              <li>home</li>
-              <li>services</li>
-              <li>about us</li>
-            </ul>
-          </div>
-          {/* <div className="mr-10">
-            <button className="mb-1 bg-blue-900 text-white text-xl border-2 p-2 rounded-2xl">
-              Contact us
-            </button>
-          </div> */}
-        </div>
+    <header className="w-full mx-auto font-montserrat text-primary text-xl">
+      {/* Top Level Bar */}
+      <div className="hidden lg:flex justify-end mt-5 gap-4 w-full max-w-7xl mx-auto font-normal pr-4">
+        <h2 dir="rtl">(416) 901-2567</h2>
+        <h2>| </h2>
+        <h2>Contact</h2>
       </div>
-    </nav>
+
+      {/* NavBar  */}
+      <nav className="relative mt-5 px-4 flex justify-between items-center max-w-7xl mx-auto">
+        <img src={logo} className="w-70 pb-3" alt="Logo" />
+
+        {/* Menus */}
+
+        {/* Mobile Menu */}
+        <div className="lg:hidden">
+          <MobileMenu items={menuItems} />
+        </div>
+
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex lg:gap-8 lg:items-center absolute lg:static left-0 top-25 w-full lg:w-auto bg-fourth lg:bg-transparent shadow-lg shadow-secondary lg:border-none lg:shadow-none p-4 lg:p-0 rounded-lg lg:rounded-none transition-all duration-300">
+          {menuItems.map((item) => (
+            <DesktopMenu key={item.name} item={item} />
+          ))}
+        </ul>
+      </nav>
+    </header>
   );
 }
