@@ -2,27 +2,14 @@
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-import { motion } from "framer-motion";
-import { BiChevronDown } from "react-icons/bi";
+// import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 export default function MobileMenu({ items }) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
-  const [clicked, setClicked] = useState(null);
 
   const toggleDrawer = () => {
     setIsOpenMenu(!isOpenMenu);
-    setClicked(null);
-  };
-
-  const subMenuDrawer = {
-    enter: {
-      height: "auto",
-      overflow: "hidden",
-    },
-    exit: {
-      height: 0,
-      overflow: "hidden",
-    },
   };
 
   return (
@@ -35,52 +22,35 @@ export default function MobileMenu({ items }) {
         {isOpenMenu ? <IoClose size={30} /> : <FiMenu size={30} />}
       </button>
 
-      {/* <div className="fixed block border-1 border-secondary/20  left-0 top-25 w-full bg-fourth lg:bg-transparent shadow-lg shadow-third/40  p-4 rounded-lg "> */}
       <ul
         className={`${
           isOpenMenu
-            ? "block border-1 border-secondary/20 absolute left-0 top-25 w-full bg-fourth lg:bg-transparent shadow-lg shadow-third/40  p-4 rounded-lg  transition-all duration-300"
+            ? "block border-1 border-secondary/20 absolute left-0 top-25 w-full bg-fourth lg:bg-transparent shadow-lg shadow-third/40  p-4 rounded-lg  transition-transform duration-300"
             : "hidden"
         }`}
       >
         {items.map((item, i) => {
-          const isClicked = clicked === i;
           const hasSubMenu = item.submenu?.length;
           return (
-            <li key={i} className="">
-              <span
-                className="flex justify-between items-center p-4 hover:bg-third rounded-md cursor-pointer relative"
-                onClick={() => setClicked(isClicked ? null : i)}
-              >
-                {item.name}
-                {hasSubMenu && (
-                  <BiChevronDown
-                    className={`ml-auto ${isClicked && "rotate-180"} `}
-                  />
-                )}
-              </span>
+            <li key={i} className="pb-3 ">
+              <NavLink to={item.path}>{item.name}</NavLink>
+
               {hasSubMenu && (
-                <motion.ul
-                  initial="exit"
-                  animate={isClicked ? "enter" : "exit"}
-                  variants={subMenuDrawer}
-                  className="ml-5"
-                >
-                  {item.submenu.map((name) => (
+                <ul className="ml-5 border-b-1 border-third/40 ">
+                  {item.submenu.map((subitem, i) => (
                     <li
-                      key={name}
-                      className="p-2 flex-center hover:underline rounded-md gap-x-2 cursor-pointer"
+                      key={i}
+                      className="p-1 flex-center hover:underline rounded-md ursor-pointer"
                     >
-                      <a href="#">{name}</a>
+                      <NavLink to={subitem.path}>{subitem.name}</NavLink>
                     </li>
                   ))}
-                </motion.ul>
+                </ul>
               )}
             </li>
           );
         })}
       </ul>
-      {/* </div> */}
     </>
   );
 }

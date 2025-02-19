@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 export default function DesktopMenu({ item }) {
   const [open, setOpen] = useState(false);
 
@@ -11,10 +12,15 @@ export default function DesktopMenu({ item }) {
     <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="group relative h-fit w-fit"
+      className="group relative z-50 h-fit w-fit "
     >
-      <li className="relative p-2">
-        {item.name}
+      <li className="relative p-2 ">
+        <NavLink
+          to={item.path}
+          className="hover:text-underLine rounded-2xl p-1 transition-normal duration-200"
+        >
+          {item.name}
+        </NavLink>
         <span
           style={{
             transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
@@ -23,21 +29,20 @@ export default function DesktopMenu({ item }) {
         />
       </li>
       <AnimatePresence>
-        <div className="absolute rounded-2xl  top-16 left-1/2 -translate-x-1/2 bg-third/30">
+        <div className="absolute rounded-2xl  top-16 left-1/2 -translate-x-1/2 bg-fourth shadow-sm shadow-primary">
           {showFlyout && (
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 15 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="w-52 p-2 align-middle rounded-2xl shadow-md shadow-third"
+              className="w-52 p-2 align-middle rounded-2xl  "
             >
               <div className="absolute -top-6 left-0 right-0 h-6 bg-transparent" />
-              <div className="absolute left-1/2 top-0 h-4 w-4  -translate-x-1/2 -translate-y-1/2 rotate-45 bg-fourth" />
               <ul>
                 {item.submenu.map((subItem, i) => (
-                  <li key={i} className="block text-md hover:underline p-2">
-                    <a href="#">{subItem}</a>
+                  <li key={i} className="block text-md hover:bg-third p-2">
+                    <NavLink to={subItem.path}>{subItem.name}</NavLink>
                   </li>
                 ))}
               </ul>
