@@ -12,12 +12,22 @@ export default function DesktopMenu({ item }) {
     <div
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
-      className="group relative z-50 h-fit w-fit "
+      onFocus={() => setOpen(true)}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget)) {
+          setOpen(false);
+        }
+      }}
+      className="group relative z-50 h-fit w-fit"
     >
-      <li className="relative p-2 ">
+      <div className="relative p-2 hover:text-text-hover">
         <NavLink
           to={item.path}
-          className="hover:text-underLine rounded-2xl p-1 transition-normal duration-200"
+          className={({ isActive }) =>
+            `text-hover p-1  ${isActive ? "font-semibold text-text-hover" : ""}`
+          }
+          aria-haspopup={item.submenu ? "true" : "false"}
+          aria-expanded={showFlyout ? "true" : "false"}
         >
           {item.name}
         </NavLink>
@@ -25,32 +35,44 @@ export default function DesktopMenu({ item }) {
           style={{
             transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
           }}
-          className="absolute -bottom-1 -left-2 -right-2 h-1 origin-left rounded-full bg-underLine transition-transform duration-300 ease-out "
+          className="absolute -bottom-1 -left-2 -right-2 h-1 origin-left rounded-full bg-primary transition-transform duration-300 ease-out"
         />
-      </li>
-      <AnimatePresence>
-        <div className="absolute rounded-2xl  top-16 left-1/2 -translate-x-1/2 bg-fourth shadow-sm shadow-primary">
-          {showFlyout && (
+      </div>
+
+      {/* Render submenu only if it exists */}
+      {showFlyout && (
+        <AnimatePresence>
+          <nav
+            className="absolute rounded-2xl top-16 left-1/2 -translate-x-1/2 bg-secondary shadow-sm shadow-primary"
+            role="menu"
+          >
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 15 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="w-52 p-2 align-middle rounded-2xl  "
+              className="w-56 p-2 align-middle rounded-2xl"
             >
               <div className="absolute -top-6 left-0 right-0 h-6 bg-transparent" />
-              <ul>
+              <ul className="text-base">
                 {item.submenu.map((subItem, i) => (
-                  <li key={i} className="block text-md hover:bg-third p-2">
-                    <NavLink to={subItem.path}>{subItem.name}</NavLink>
+                  <li
+                    key={i}
+                    className="block text-base hover:bg-light-gray p-2"
+                  >
+                    <NavLink
+                      to={`/${item.path}/${subItem.path}`}
+                      className="block p-1"
+                    >
+                      {subItem.name}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
-              {/* {item.submenu} */}
             </motion.div>
-          )}
-        </div>
-      </AnimatePresence>
+          </nav>
+        </AnimatePresence>
+      )}
     </div>
   );
 }
