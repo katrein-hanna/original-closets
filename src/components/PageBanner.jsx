@@ -3,7 +3,7 @@
 export default function PageBanner({ title, image }) {
   return (
     <section
-      className="relative w-full h-[550px] bg-cover bg-center bg-fixed flex justify-center items-center"
+      className="relative w-full h-[550px] bg-cover bg-center bg-no-repeat md:bg-fixed flex justify-center items-center"
       style={{ backgroundImage: `url(${image})` }}
     >
       {/* Overlay */}

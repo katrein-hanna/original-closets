@@ -72,13 +72,13 @@ export default function HeroSection() {
 
       {/* Navigation Arrows */}
       <button
-        className="absolute hidden md:block top-1/2 left-5 transform -translate-y-1/2 rounded-full bg-primary/50 hover:bg-primary text-white p-3 z-20"
+        className="absolute  top-1/2 left-5 transform -translate-y-1/2 rounded-full bg-primary/50 hover:bg-primary text-white p-3 z-20"
         onClick={prevSlide}
       >
         <AiOutlineLeft className="md:text-3xl  text-xs" />
       </button>
       <button
-        className="absolute hidden md:block top-1/2 right-5 transform -translate-y-1/2 rounded-full bg-primary/50 hover:bg-primary text-white p-3 z-20"
+        className="absolute  top-1/2 right-5 transform -translate-y-1/2 rounded-full bg-primary/50 hover:bg-primary text-white p-3 z-20"
         onClick={nextSlide}
       >
         <AiOutlineRight className="md:text-3xl text-xs" />
