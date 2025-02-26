@@ -9,12 +9,20 @@ import FeatureCard from "./FeatureCard";
 
 export default function ServicesSection() {
   const servicesContent = [
-    { text: "Closets", bgImg: image1 },
-    { text: "Kitchen Pantry", bgImg: image2 },
-    { text: "Laundry Rooms", bgImg: image3 },
-    { text: "Home Office", bgImg: image4 },
-    { text: "Garage Cabinets", bgImg: image5 },
-    { text: "Murphy Beds", bgImg: image6 },
+    { text: "Closets", bgImg: image1, path: "closets" },
+    {
+      text: "Kitchen Pantry",
+      bgImg: image2,
+      path: "living-areas/kitchen-pantry",
+    },
+    {
+      text: "Laundry Rooms",
+      bgImg: image3,
+      path: "living-areas/laundry-rooms",
+    },
+    { text: "Home Office", bgImg: image4, path: "living-areas/home-office" },
+    { text: "Garage Cabinets", bgImg: image5, path: "garages" },
+    { text: "Murphy Beds", bgImg: image6, path: "living-areas/murphy-beds" },
   ];
 
   return (
