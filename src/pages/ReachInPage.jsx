@@ -1,4 +1,7 @@
-import reachInImage from "../assets/images/closets/reachIn/Reachin_square_2.webp";
+//
+
+import reachInImage from "../assets/images/closets/reachIn/Reachin_square_4.jpg";
+import reachInImage2 from "../assets/images/closets/reachIn/Reachin_square_1.webp";
 import GallerySection from "../components/GallerySection";
 import PageBanner from "../components/PageBanner";
 import PageContent from "../components/PageContent";
@@ -6,7 +9,7 @@ import SideImageCard from "../components/SideImageCard";
 import PromoBanner from "../components/PromoBanner";
 
 const cardcontent = {
-  image: reachInImage,
+  image: reachInImage2,
   title1: "Customizable",
   des1: "Choose from framed or frameless flat panels, mirror panels or glass panels.",
   title2: "Colourful",

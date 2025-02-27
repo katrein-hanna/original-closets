@@ -4,14 +4,14 @@ import ImageCard from "../components/ImageCard";
 import FeatureCard from "../components/FeatureCard";
 import GallerySection from "../components/GallerySection";
 
-import closetImage from "../assets/images/closets/reachIn/Reachin_square_1.webp";
+import closetImage from "../assets/images/closets/closet.jpg";
 
 import image1 from "../assets/images/closets/feature-images/pullout.webp";
 import image2 from "../assets/images/closets/feature-images/finishes.webp";
 import image3 from "../assets/images/closets/feature-images/knobs.webp";
-import featureImage1 from "../assets/images/closets/walkIn/Walkin_square_3.webp";
+import featureImage1 from "../assets/images/closets/walkIn/Walkin_square_4.webp";
 import featureImage2 from "../assets/images/closets/reachIn/Reachin_square_1.webp";
-import featureImage3 from "../assets/images/closets/wardrobe/Wardrobe_square_1.webp";
+import featureImage3 from "../assets/images/closets/wardrobe/Wardrobe_square_2.jpg";
 
 import PromoBanner from "../components/PromoBanner";
 import { Link } from "react-router-dom";

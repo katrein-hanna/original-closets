@@ -1,5 +1,5 @@
 // import React from 'react'
-import wardrobeImage from "../assets/images/closets/wardrobe/Wardrobe_square_1.webp";
+import wardrobeImage from "../assets/images/closets/wardrobe/Wardrobe_square_1.jpg";
 import image1 from "../assets/images/closets/feature-images/pullout.webp";
 import image2 from "../assets/images/closets/feature-images/finishes.webp";
 import image3 from "../assets/images/closets/feature-images/knobs.webp";

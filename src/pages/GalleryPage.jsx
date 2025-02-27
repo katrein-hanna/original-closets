@@ -1,5 +1,5 @@
 import PageBanner from "../components/PageBanner";
-import closetImage from "../assets/images/closets/walkIn/Walkin_square_1.webp";
+import closetImage from "../assets/images/entryStorage/entry_2.jpg";
 import GallerySection from "../components/GallerySection";
 
 export default function GalleryPage() {

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function FeatureCard({ content }) {
   return (
     <div className="relative group overflow-hidden rounded-xl shadow-md shadow-primary/50  cursor-pointer">
-      <Link to={content.path}>
+      <Link to={`/${content.path}`}>
         <img
           src={content.bgImg}
           alt={content.text}

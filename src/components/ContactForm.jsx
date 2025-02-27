@@ -113,7 +113,7 @@ export default function ContactForm() {
       <div className="content-container text-primary mx-auto">
         {submitStatus === "success" && (
           <div className="bg-green-100 border border-text-hover text-primary px-4 py-3 rounded mb-4">
-            <p>{`Thank you for your message! We'll contact with you soon.`}</p>
+            <p>{`Thank you for your message! We'll contact you soon.`}</p>
           </div>
         )}
 

@@ -2,7 +2,7 @@
 import PageBanner from "../components/PageBanner";
 import PageContent from "../components/PageContent";
 
-import garageImage from "../assets/images/garage/Garage_suqare_1.webp";
+import garageImage from "../assets/images/garage/garage_cabbinets.jpg";
 
 import GallerySection from "../components/GallerySection";
 import PromoBanner from "../components/PromoBanner";

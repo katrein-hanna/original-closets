@@ -2,7 +2,7 @@ import GallerySection from "../components/GallerySection";
 import PageBanner from "../components/PageBanner";
 import PromoBanner from "../components/PromoBanner";
 
-import pantryImage from "../assets/images/pantry/Pantry_square_1.webp";
+import pantryImage from "../assets/images/pantry/Pantry_square.jpg";
 
 export default function KitchenPantryPage() {
   return (

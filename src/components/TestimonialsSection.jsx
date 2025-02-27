@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
     <section className="main-container py-10 lg:h-[350px] md:h-[400px] bg-light-gray">
       <div className="content-container mx-auto text-primary">
         <h1>Testimonials</h1>
-        <p className="uppercase ">Our trusted clients openions</p>
+        <p className="uppercase ">Our trusted clients opinions</p>
         <div className="lg:h-[150px] md:h-[200px]">
           <div className="flex flex-col items-center justify-center text-center p-8">
             {/* Animated Quote Text */}

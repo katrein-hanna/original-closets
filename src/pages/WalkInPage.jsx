@@ -1,4 +1,4 @@
-import walkInImage from "../assets/images/closets/walkIn/Walkin_square_3.webp";
+import walkInImage from "../assets/images/closets/walkIn/Walkin_square_5.jpg";
 import image1 from "../assets/images/closets/feature-images/pullout.webp";
 import image2 from "../assets/images/closets/feature-images/finishes.webp";
 import image3 from "../assets/images/closets/feature-images/knobs.webp";

@@ -1,8 +1,10 @@
-import image1 from "../assets/images/closets/walkIn/Walkin_square_4.webp";
-import image2 from "../assets/images/pantry/Pantry_square_2.webp";
+//
+
+import image1 from "../assets/images/closets/reachIn/Reachin_square_4.jpg";
+import image2 from "../assets/images/pantry/Pantry_square_1.webp";
 import image3 from "../assets/images/laundry/Laundryu_square_1.webp";
-import image4 from "../assets/images/office/Office_square_3.webp";
-import image5 from "../assets/images/garage/Garage_suqare_4.webp";
+import image4 from "../assets/images/office/Office_square_1.jpg";
+import image5 from "../assets/images/garage/Garage_suqare_1.webp";
 import image6 from "../assets/images/wallbed/Murhpy_square_5.webp";
 
 import FeatureCard from "./FeatureCard";
@@ -10,19 +12,19 @@ import FeatureCard from "./FeatureCard";
 export default function ServicesSection() {
   const servicesContent = [
     { text: "Closets", bgImg: image1, path: "closets" },
+    { text: "Murphy Beds", bgImg: image6, path: "living-areas/murphy-beds" },
     {
       text: "Kitchen Pantry",
       bgImg: image2,
       path: "living-areas/kitchen-pantry",
     },
+    { text: "Home Office", bgImg: image4, path: "living-areas/home-office" },
     {
       text: "Laundry Rooms",
       bgImg: image3,
       path: "living-areas/laundry-rooms",
     },
-    { text: "Home Office", bgImg: image4, path: "living-areas/home-office" },
     { text: "Garage Cabinets", bgImg: image5, path: "garages" },
-    { text: "Murphy Beds", bgImg: image6, path: "living-areas/murphy-beds" },
   ];
 
   return (

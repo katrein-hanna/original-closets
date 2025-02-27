@@ -2,7 +2,7 @@ import GallerySection from "../components/GallerySection";
 import PageContent from "../components/PageContent";
 import PageBanner from "../components/PageBanner";
 
-import laundryImage from "../assets/images/laundry/Laundryu_square_2.webp";
+import laundryImage from "../assets/images/laundry/Laundry_2.jpg";
 import PromoBanner from "../components/PromoBanner";
 
 export default function LaundryRoomsPage() {

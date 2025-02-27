@@ -5,21 +5,27 @@ import PromoBanner from "../components/PromoBanner";
 import FeatureCard from "../components/FeatureCard";
 import GallerySection from "../components/GallerySection";
 
-import livingAreasImage from "../assets/images/office/Office_square_4.webp";
-import image1 from "../assets/images/closets/walkIn/Walkin_square_4.webp";
-import image2 from "../assets/images/pantry/Pantry_square_2.webp";
-import image3 from "../assets/images/laundry/Laundryu_square_1.webp";
-import image4 from "../assets/images/office/Office_square_3.webp";
-import image5 from "../assets/images/garage/Garage_suqare_4.webp";
-import image6 from "../assets/images/wallbed/Murhpy_square_5.webp";
+import livingAreasImage from "../assets/images/entryStorage/livingArea.jpg";
+import image1 from "../assets/images/office/Office_square_1.jpg";
+import image2 from "../assets/images/entryStorage/entry_1.jpg";
+import image3 from "../assets/images/wallbed/Murphy_square_2.jpg";
+import image4 from "../assets/images/laundry/Laundry.jpg";
+import image5 from "../assets/images/pantry/Pantry_square_3.webp";
 
 const livingAreaContent = [
-  { text: "Closets", bgImg: image1 },
-  { text: "Kitchen Pantry", bgImg: image2 },
-  { text: "Laundry Rooms", bgImg: image3 },
-  { text: "Home Office", bgImg: image4 },
-  { text: "Garage Cabinets", bgImg: image5 },
-  { text: "Wall Beds", bgImg: image6 },
+  { text: "Home Office", bgImg: image1, path: "living-areas/home-office" },
+  {
+    text: "Entry Storage",
+    bgImg: image2,
+    path: "living-areas/entryway-storage",
+  },
+  { text: "Murphy Beds", bgImg: image3, path: "living-areas/murphy-beds" },
+  { text: "Laundry Rooms", bgImg: image4, path: "living-areas/laundry-rooms" },
+  {
+    text: "Kitchen Pantry",
+    bgImg: image5,
+    path: "living-areas/kitchen-pantry",
+  },
 ];
 export default function LivingAreasPage() {
   return (

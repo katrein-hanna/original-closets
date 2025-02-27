@@ -2,7 +2,7 @@
 import PageBanner from "../components/PageBanner";
 import PageContent from "../components/PageContent";
 
-import entryImage from "../assets/images/pantry/Pantry_square_5.webp";
+import entryImage from "../assets/images/entryStorage/entry_1.jpg";
 import GallerySection from "../components/GallerySection";
 import PromoBanner from "../components/PromoBanner";
 

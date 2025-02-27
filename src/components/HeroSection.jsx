@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 
-import image1 from "../assets/images/garage/Garage_suqare_2.webp";
-import image2 from "../assets/images/laundry/Laundryu_square_1.webp";
-import image3 from "../assets/images/office/Office_square_1.webp";
-import image4 from "../assets/images/pantry/Pantry_square_1.webp";
-import image5 from "../assets/images/closets/walkIn/Walkin_square_1.webp";
+import image1 from "../assets/images/garage/garage_cabbinets.jpg";
+import image2 from "../assets/images/laundry/Laundry.jpg";
+import image3 from "../assets/images/office/Office_square_1.jpg";
+import image4 from "../assets/images/pantry/Pantry_square.jpg";
+import image5 from "../assets/images/closets/walkIn/Walkin_square_5.jpg";
+import image6 from "../assets/images/entryStorage/entry_2.jpg";
 
 export default function HeroSection() {
   const images = [
-    { image: image1, title: "Garages " },
-    { image: image2, title: "Laundry Rooms" },
     { image: image3, title: "Home Offices" },
-    { image: image4, title: "Kitchen Pantries" },
+    { image: image6, title: "Entry Storage" },
     { image: image5, title: "Walk-In Closets" },
+    { image: image4, title: "Kitchen Pantries" },
+    { image: image2, title: "Laundry Rooms" },
+    { image: image1, title: "Garages " },
   ];
   const autoSlide = true;
   const autoSlideInterval = 5000;
@@ -48,7 +50,7 @@ export default function HeroSection() {
       </div>
 
       {/* Carousel Container */}
-      <div className="relative overflow-hidden md:h-[550px] h-[500px] w-full">
+      <div className="relative overflow-hidden lg:h-[650px] md:h-[550px] h-[500px] w-full">
         {images.map((image, index) => (
           <div
             key={index}

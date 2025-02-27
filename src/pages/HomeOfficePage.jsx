@@ -5,9 +5,9 @@ import PageBanner from "../components/PageBanner";
 import PageContent from "../components/PageContent";
 import ImageCard from "../components/ImageCard";
 
-import officeImage from "../assets/images/office/Office_square_6.webp";
-import image1 from "../assets/images/office/Office_square_1.webp";
-import image2 from "../assets/images/office/Office_square_7.webp";
+import officeImage from "../assets/images/office/Office_square_1.jpg";
+import image1 from "../assets/images/office/book_shelfs.jpg";
+import image2 from "../assets/images/office/Office_square.jpg";
 import image3 from "../assets/images/office/Office_square_3.webp";
 import PromoBanner from "../components/PromoBanner";
 

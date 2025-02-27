@@ -1,7 +1,7 @@
 import ImageCard from "./ImageCard";
-import image1 from "../assets/images/closets/walkIn/Walkin_square_3.webp";
-import image2 from "../assets/images/closets/reachIn/Reachin_square_1.webp";
-import image3 from "../assets/images/closets/wardrobe/Wardrobe_square_1.webp";
+import image1 from "../assets/images/closets/walkIn/Walkin_square_5.jpg";
+import image2 from "../assets/images/closets/reachIn/Reachin_square.jpg";
+import image3 from "../assets/images/closets/wardrobe/wardrobe.jpg";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 
