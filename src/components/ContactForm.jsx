@@ -1,5 +1,4 @@
-import { useState } from "react";
-// import Button from "../components/Button";
+import { useEffect, useState } from "react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -16,6 +15,27 @@ export default function ContactForm() {
     message: false,
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  // Use effect to clear the status message after 2 seconds
+  useEffect(() => {
+    let timeoutId;
+
+    if (submitStatus) {
+      timeoutId = setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    }
+
+    // Clean up the timeout if component unmounts or status changes
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [submitStatus]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -26,9 +46,7 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const validateForm = () => {
     const newErrors = {
       name: formData.name.trim() === "",
       email: !/\S+@\S+\.\S+/.test(formData.email), // Basic email validation
@@ -37,18 +55,79 @@ export default function ContactForm() {
     };
 
     setErrors(newErrors);
+    return !Object.values(newErrors).includes(true);
+  };
 
-    if (!Object.values(newErrors).includes(true)) {
-      alert("Form submitted successfully!");
-      // Handle form submission logic
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Web3Forms submission
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "4593e200-81d1-41b2-b02e-1036e19fa905", // Get from web3forms.com
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          subject: `Original Closets Client: ${formData.name}`,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Reset the form after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+
+        setSubmitStatus("success");
+      } else {
+        throw new Error(data.message || "Form submission failed");
+      }
+    } catch (error) {
+      console.error("Failed to submit form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <section className="main-container mb-5">
-      <div className="content-container text-primary  mx-auto">
+      <div className="content-container text-primary mx-auto">
+        {submitStatus === "success" && (
+          <div className="bg-green-100 border border-text-hover text-primary px-4 py-3 rounded mb-4">
+            <p>{`Thank you for your message! We'll contact with you soon.`}</p>
+          </div>
+        )}
+
+        {submitStatus === "error" && (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            <p>
+              Sorry, there was a problem sending your message. Please try again
+              later.
+            </p>
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-3 grid-cols-1 lg:gap-5 gap-2 ">
+          <div className="grid md:grid-cols-3 grid-cols-1 lg:gap-5 gap-2">
             {/* Name Input */}
             <div className="relative">
               <input
@@ -160,12 +239,14 @@ export default function ContactForm() {
 
           {/* Submit Button */}
           <div className="flex justify-center">
-            {/* <Button btnName="submit" /> */}
             <button
               type="submit"
-              className="uppercase w-full py-3 px-6 rounded-2xl border-2 border-text-hover text-secondary bg-text-hover font-bold transition-all duration-300 hover:bg-secondary hover:text-text-hover"
+              disabled={isSubmitting}
+              className={`uppercase w-full py-3 px-6 rounded-2xl border-2 border-text-hover text-secondary bg-text-hover font-bold transition-all duration-300 hover:bg-secondary hover:text-text-hover ${
+                isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+              }`}
             >
-              Submit
+              {isSubmitting ? "Sending..." : "Submit"}
             </button>
           </div>
         </form>

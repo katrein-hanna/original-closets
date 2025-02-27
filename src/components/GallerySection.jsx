@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import serviceImages from "../assets/data/serviceImages.json";
 import { FaSearchPlus } from "react-icons/fa";
+
+//
 export default function GallerySection({ service }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [modalImage, setModalImage] = useState(null);
@@ -17,134 +19,63 @@ export default function GallerySection({ service }) {
   };
 
   // Determine if the service should have categories or just images
-  console.log(serviceCategories[service]?.length > 0 || service === "all");
-
   const hasCategories =
     serviceCategories[service]?.length > 0 || service === "all";
-  let categories = [];
+  // let categories = [];
   // Set categories dynamically based on the service
-  if (hasCategories) {
-    console.log("ss");
-
-    if (service === "all") {
-      categories = [
-        ...new Set([
-          ...serviceCategories.closets,
-          ...serviceCategories.LivingAreas,
-          ...serviceCategories.garages,
-        ]),
-      ];
-    } else if (service === "closets") {
-      categories = serviceCategories[service];
-    } else if (service === "LivingAreas") {
-      categories = serviceCategories[service];
-    }
-  } else {
-    categories = serviceCategories[service];
-  }
+  const categories =
+    service === "all"
+      ? [
+          ...new Set([
+            ...serviceCategories.closets,
+            ...serviceCategories.LivingAreas,
+            ...serviceCategories.garages,
+          ]),
+        ]
+      : serviceCategories[service] || [];
 
   // Function to change the selected category with a fade transition
   const changeCategory = (category) => {
-    if (selectedCategory === category) return;
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setSelectedCategory(category);
-      setIsTransitioning(false);
-    }, 300);
+    if (selectedCategory !== category) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setSelectedCategory(category);
+        setIsTransitioning(false);
+      }, 300);
+    }
   };
+  console.log(serviceImages);
 
   const getImages = () => {
-    if (service === "all" && selectedCategory === "All") {
-      console.log("Service is 'all', returning all images.");
-      return Object.values(serviceImages[("closets", "LivingAreas")]).flat();
-    }
-    if (service === "closets" && selectedCategory === "All") {
-      console.log("Service is 'all', returning all images.");
-      return Object.values(serviceImages["closets"]).flat();
-    }
-    if (service === "LivingAreas" && selectedCategory === "All") {
-      console.log("Service is 'all', returning all images.");
-      return Object.values(serviceImages["LivingAreas"]).flat();
-    }
-
     if (service === "all") {
-      console.log("Service not found in serviceImages:", service);
-      if (
-        selectedCategory === "Walk-in" ||
-        selectedCategory === "Reach-in" ||
-        selectedCategory === "Wardrobe"
-      ) {
-        // console.log("Service is 'all', returning all images.");
-        return Object.values(serviceImages.closets[selectedCategory]).flat();
+      if (selectedCategory === "All") {
+        return [
+          ...Object.values(serviceImages.closets).flat(),
+          ...Object.values(serviceImages.LivingAreas).flat(),
+          ...Object.values(serviceImages.Garages).flat(),
+        ];
       }
-      console.log(selectedCategory);
-
-      if (
-        selectedCategory === "Garages" ||
-        selectedCategory === "Home Office" ||
-        selectedCategory === "Pantry" ||
-        selectedCategory === "Murphy Beds" ||
-        selectedCategory === "Laundry"
-      ) {
-        // console.log("Service is 'all', returning all images.");
-        return Object.values(
-          serviceImages.LivingAreas[selectedCategory]
-        ).flat();
-      }
-
-      return [];
+      return (
+        serviceImages.closets[selectedCategory] ||
+        serviceImages.LivingAreas[selectedCategory] ||
+        serviceImages.Garages[selectedCategory] ||
+        []
+      );
     }
-
-    if (service === "closets" || service === "LivingAreas") {
-      if (
-        selectedCategory === "Walk-in" ||
-        selectedCategory === "Reach-in" ||
-        selectedCategory === "Wardrobe"
-      ) {
-        // console.log("Service is 'all', returning all images.");
-        return Object.values(serviceImages.closets[selectedCategory]).flat();
-      }
-
-      if (
-        selectedCategory === "Garages" ||
-        selectedCategory === "Home Office" ||
-        selectedCategory === "Pantry" ||
-        selectedCategory === "Murphy Beds" ||
-        selectedCategory === "Laundry"
-      ) {
-        // console.log("Service is 'all', returning all images.");
-        return Object.values(
-          serviceImages.LivingAreas[selectedCategory]
-        ).flat();
-      }
-      return [];
+    if (serviceImages[service]) {
+      return selectedCategory === "All"
+        ? Object.values(serviceImages[service]).flat()
+        : serviceImages[service][selectedCategory] || [];
     }
-    console.log(!hasCategories);
 
     if (!hasCategories) {
-      console.log(hasCategories);
-
-      if (
-        service === "Walk-in" ||
-        service === "Reach-in" ||
-        service === "Wardrobe"
-      ) {
-        console.log("Service is true");
-        return Object.values(serviceImages.closets[service]).flat();
+      for (const [category, services] of Object.entries(serviceCategories)) {
+        if (services.includes(service) && service !== "All") {
+          console.log("Service is true");
+          return Object.values(serviceImages[category]?.[service] || []).flat();
+        }
       }
-      console.log(service);
 
-      if (
-        service === "Garages" ||
-        service === "Home Office" ||
-        service === "Pantry" ||
-        service === "Murphy Beds" ||
-        service === "Laundry"
-      ) {
-        console.log("Service is true");
-
-        return Object.values(serviceImages.LivingAreas[service]).flat();
-      }
       return [];
     }
 
@@ -182,16 +113,20 @@ export default function GallerySection({ service }) {
     }
   };
 
-  useEffect(() => {
-    const handleKeyDown = (e) => {
+  const handleKeyDown = useCallback(
+    (e) => {
       if (!modalImage) return;
       if (e.key === "ArrowLeft") prevImage();
       if (e.key === "ArrowRight") nextImage();
       if (e.key === "Escape") closeModal();
-    };
+    },
+    [modalImage, currentIndex]
+  );
+
+  useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [modalImage, currentIndex]);
+  }, [handleKeyDown]);
 
   return (
     <section className="content-container text-center pt-10">

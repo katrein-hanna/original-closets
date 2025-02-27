@@ -6,11 +6,12 @@
       "Wardrobe": ["/images/closets/wardrobe/Wardrobe_square_1.webp"]
     },
     "LivingAreas":{
-      "Garages": ["/images/garage/Garage_suqare_1.webp", "/images/garage/Garage_suqare_2.webp", "/images/garage/Garage_suqare_3.webp", "/images/garage/Garage_suqare_4.webp"],
       "Home Office": ["/images/office/Office_square_1.webp", "/images/office/Office_square_2.webp", "/images/office/Office_square_3.webp", "/images/office/Office_square_4.webp"],
       "Pantry": ["/images/pantry/Pantry_square_1.webp", "/images/pantry/Pantry_square_2.webp", "/images/pantry/Pantry_square_3.webp", "/images/pantry/Pantry_square_4.webp"],
       "Murphy Beds": ["/images/wallbed/Murhpy_square_1.webp", "/images/wallbed/Murhpy_square_5.webp"],
       "Laundry": ["/images/laundry/Laundryu_square_1.webp", "/images/laundry/Laundryu_square_2.webp", "/images/laundry/Laundryu_square_3.webp"]
-    }
-  
+    },
+    "Garages":{ 
+      "Garages":["/images/garage/Garage_suqare_1.webp", "/images/garage/Garage_suqare_2.webp", "/images/garage/Garage_suqare_3.webp", "/images/garage/Garage_suqare_4.webp"]
+  }
 }
