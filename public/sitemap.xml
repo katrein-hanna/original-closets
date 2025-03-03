@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://original-closets.netlify.app/</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>weekly</changefreq> -->
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/closets</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>weekly</changefreq> -->
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/closets/walkin</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/closets/reachin</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/closets/wardrobe</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/living-areas</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>weekly</changefreq> -->
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/living-areas/home-office</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/living-areas/entryway-storage</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/living-areas/murphy-beds</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/living-areas/laundry-rooms</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/living-areas/kitchen-pantry</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/garages</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>weekly</changefreq> -->
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/gallery</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://original-closets.netlify.app/contact-us</loc>
+        <lastmod>2025-03-03</lastmod>
+        <!-- <changefreq>monthly</changefreq> -->
+        <priority>0.6</priority>
+    </url>
+</urlset>
