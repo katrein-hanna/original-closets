@@ -7,6 +7,7 @@ import PageBanner from "../components/PageBanner";
 import PageContent from "../components/PageContent";
 import SideImageCard from "../components/SideImageCard";
 import PromoBanner from "../components/PromoBanner";
+import SEO from "../components/SEO";
 
 const cardcontent = {
   image: reachInImage2,
@@ -16,8 +17,27 @@ const cardcontent = {
   des2: "You can choose the colour of your panels even if they were mirrored.",
 };
 export default function ReachInPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Reach-In Closets",
+    description: "Compact and efficient closet designs for smaller spaces.",
+    image:
+      "https://original-closets.netlify.app/images/closets/reachIn/Reachin_square.jpg",
+    brand: { "@type": "Brand", name: "Original Closets" },
+  };
+
   return (
     <>
+      <SEO
+        title="Reach-In Closets - Original Closets"
+        description="Maximize small spaces with custom-designed reach-in closets."
+        keywords="reach-in closets, small closet solutions, storage ideas"
+        image="https://original-closets.netlify.app/images/closets/reachIn/Reachin_square.jpg"
+        url="https://original-closets.netlify.app/closets/reachin"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={reachInImage} title="Reach-In closets" />
       <PageContent
         title="You deserve more than a wire shelf and a rod!"

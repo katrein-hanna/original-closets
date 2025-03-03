@@ -6,9 +6,41 @@ import garageImage from "../assets/images/garage/garage_cabbinets.jpg";
 
 import GallerySection from "../components/GallerySection";
 import PromoBanner from "../components/PromoBanner";
+import SEO from "../components/SEO";
 export default function GaragesPage() {
+  //
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom Garage Storage Solutions",
+    description:
+      "Transform your garage into a well-organized space with our custom solutions, including built-in cabinets, shelving, and specialized storage systems.",
+    provider: {
+      "@type": "Organization",
+      name: "Original Closets",
+      url: "https://original-closets.netlify.app/",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Canada - Toronto",
+    },
+    serviceType: "Garage Cabinets Design",
+    image:
+      "https://original-closets.netlify.app/images/garage/garage_cabinets.jpg",
+    url: "https://original-closets.netlify.app/garages",
+  };
+
   return (
     <>
+      <SEO
+        title="Custom Garage Cabinets Solutions - Original Closets"
+        description="Maximize your garage space with our custom storage solutions. Featuring built-in cabinets, shelves, and organizational tools for a clean and functional garage."
+        keywords="garage storage, custom garage solutions, built-in garage cabinets, garage shelving, garage organization, garage storage systems, home garage design"
+        image="https://original-closets.netlify.app/images/garage/garage_cabbinets.jpg"
+        url="https://original-closets.netlify.app/garages"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={garageImage} title="Garages" />
       <PageContent
         title="A SPACE FOR MORE THAN CARS"

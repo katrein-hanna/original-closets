@@ -11,11 +11,12 @@ import image2 from "../assets/images/entryStorage/entry_1.jpg";
 import image3 from "../assets/images/wallbed/Murphy_square_2.jpg";
 import image4 from "../assets/images/laundry/Laundry.jpg";
 import image5 from "../assets/images/pantry/Pantry_square_3.webp";
+import SEO from "../components/SEO";
 
 const livingAreaContent = [
   { text: "Home Office", bgImg: image1, path: "living-areas/home-office" },
   {
-    text: "Entry Storage",
+    text: "Entryway Storage",
     bgImg: image2,
     path: "living-areas/entryway-storage",
   },
@@ -28,8 +29,38 @@ const livingAreaContent = [
   },
 ];
 export default function LivingAreasPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom Storage Solutions for Living Areas",
+    description:
+      "Enhance your living space with beautifully designed, custom storage solutions that blend seamlessly with your home decor.",
+    provider: {
+      "@type": "Organization",
+      name: "Original Closets",
+      url: "https://example.com",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Canada - Toronto",
+    },
+    serviceType: "Custom Storage Design",
+    image:
+      "https://original-closets.netlify.app/images/closets/living-area.jpg",
+    url: "https://original-closets.netlify.app/living-areas",
+  };
+
   return (
     <>
+      <SEO
+        title="Custom Storage for Living Areas - Original Closets"
+        description="Upgrade your living areas with custom storage solutions that maximize space and style. Tailored to fit your home’s design and organization needs."
+        keywords="custom living area storage, built-in shelves, wall units, entertainment center storage, home organization, closet systems"
+        image="https://original-closets.netlify.app/images/closets/living-area.jpg"
+        url="https://original-closets.netlify.app/living-areas"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={livingAreasImage} title="Living Areas" />
       <PageContent
         title=""

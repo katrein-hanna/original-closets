@@ -8,6 +8,9 @@ import PageContent from "../components/PageContent";
 import PromoBanner from "../components/PromoBanner";
 import ImageCard from "../components/ImageCard";
 import GallerySection from "../components/GallerySection";
+import Button from "../components/Button";
+import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const features = [
   {
@@ -30,8 +33,31 @@ const features = [
   },
 ];
 export default function WardrobePage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom Wardrobe Design",
+    image:
+      "https://original-closets.netlify.app/images/closets/wardrobe/wardrobe.jpg",
+    description:
+      "Elegant and functional wardrobes designed to fit your space and style.",
+    brand: {
+      "@type": "Brand",
+      name: "Original Closets",
+    },
+  };
+
   return (
     <>
+      <SEO
+        title="Custom Wardrobes - Original Closets"
+        description="Elegant and functional wardrobes designed to fit your space and style."
+        keywords="Custom wardrobes,Built-in wardrobe,Modern wardrobe design,Closet organization,Stylish wardrobe solutions,Space-saving wardrobes,Luxury wardrobe designs,Wardrobe storage solutions,Fitted wardrobes,Sliding door wardrobes, storage ideas"
+        image="https://original-closets.netlify.app/images/closets/wardrobe/wardrobe.jpg"
+        url="https://original-closets.netlify.app/closets/wardrobe"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={wardrobeImage} title="Wardrobe closets" />
       <PageContent
         title="The anywhere storage solution"
@@ -48,9 +74,9 @@ export default function WardrobePage() {
         ))}
       </div>
       <div className="flex justify-center items-center py-10">
-        <button className="uppercase py-3 px-8 rounded-2xl border-2 border-text-hover text-secondary bg-text-hover font-bold transition-all hover:bg-secondary hover:text-text-hover  duration-300">
-          Learn More
-        </button>
+        <Link to="/contact-us">
+          <Button btnName="Learn More" />
+        </Link>
       </div>
       <PromoBanner />
       <GallerySection service="Wardrobe" />

@@ -5,9 +5,40 @@ import PageBanner from "../components/PageBanner";
 import PromoBanner from "../components/PromoBanner";
 
 import murphyImage from "../assets/images/wallbed/Murhpy_square_5.webp";
+import SEO from "../components/SEO";
 export default function MurphyBedsPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom Murphy Beds & Wall Beds",
+    description:
+      "Maximize your space with custom-designed Murphy beds that seamlessly blend functionality and style. Perfect for small spaces, guest rooms, and home offices.",
+    provider: {
+      "@type": "Organization",
+      name: "Original Closets",
+      url: "https://original-closets.netlify.app/",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Canada - Toronto",
+    },
+    serviceType: "Custom Murphy Bed Design",
+    image:
+      "https://original-closets.netlify.app/images/wallbed/Murhpy_square_5.webp",
+    url: "https://original-closets.netlify.app/living-areas/murphy-beds",
+  };
+
   return (
     <>
+      <SEO
+        title="Custom Murphy Beds - Space-Saving Wall Beds - Original Closets"
+        description="Transform your space with custom Murphy beds. Designed for comfort and functionality, our wall beds are perfect for maximizing room space in any home."
+        keywords="Murphy beds, custom wall beds, space-saving beds, hidden beds, foldable beds, guest room solutions, home office bed"
+        image="https://original-closets.netlify.app/images/wallbed/Murhpy_square_5.webp"
+        url="https://original-closets.netlify.app/living-areas/murphy-beds"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={murphyImage} title="Murphy Beds" />
       <PageContent
         title="Hidden & Multifunctional"

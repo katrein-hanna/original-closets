@@ -10,6 +10,7 @@ import image1 from "../assets/images/office/book_shelfs.jpg";
 import image2 from "../assets/images/office/Office_square.jpg";
 import image3 from "../assets/images/office/Office_square_3.webp";
 import PromoBanner from "../components/PromoBanner";
+import SEO from "../components/SEO";
 
 const features = [
   {
@@ -32,8 +33,38 @@ const features = [
   },
 ];
 export default function HomeOfficePage() {
+  //
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom Home Office Solutions",
+    description:
+      "Design your ideal home office with our custom-built storage solutions, including desks, shelving, and organizational features that enhance your productivity.",
+    provider: {
+      "@type": "Organization",
+      name: "Original Closets",
+      url: "https://original-closets.netlify.app/",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Canada - Toronto",
+    },
+    serviceType: "Custom Home Office Design",
+    image:
+      "https://original-closets.netlify.app/images/office/Office_square_3.webp",
+    url: "https://original-closets.netlify.app/living-areas/home-office",
+  };
   return (
     <>
+      <SEO
+        title="Custom Home Office Solutions - Original Closets"
+        description="Create a productive and organized workspace with our custom home office solutions. Featuring built-in desks, shelves, and storage options for all your office needs."
+        keywords="home office storage, custom office design, built-in desks, office shelving, home office organization, workspace design, office storage solutions"
+        image="https://original-closets.netlify.app/images/office/Office_square_3.webp"
+        url="https://original-closets.netlify.app/living-areas/home-office"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={officeImage} title="Home Office" />
       <PageContent
         title="WORKSPACE THAT INSPIRES PRODUCTIVITY"

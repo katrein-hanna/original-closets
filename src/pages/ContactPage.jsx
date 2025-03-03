@@ -4,10 +4,32 @@ import PageBanner from "../components/PageBanner";
 
 import contactImage from "../assets/images/pantry/Pantry_square_3.webp";
 import ServicesSection from "../components/ServicesSection";
+import SEO from "../components/SEO";
 
 export default function ContactPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Original Closets",
+    url: "https://original-closets.netlify.app/contact-us",
+    logo: "https://original-closets.netlify.app/svgLogo2.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-800-555-5555",
+      contactType: "customer service",
+    },
+  };
+
   return (
     <>
+      <SEO
+        title="Contact Us - Get a Free Consultation - Original Closets"
+        description="Contact us today to schedule a free consultation for your custom closets."
+        keywords="contact, custom closets consultation, closet design"
+        image="https://original-closets.netlify.app/images/pantry/Pantry_square_3.webp"
+        url="https://original-closets.netlify.app/contact-us"
+        structuredData={structuredData}
+      />
       <PageBanner image={contactImage} title="Contact" />
       <div className=" pt-10  text-primary ">
         <p className="content-container text-start">

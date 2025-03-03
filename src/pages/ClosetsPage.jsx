@@ -16,6 +16,7 @@ import featureImage3 from "../assets/images/closets/wardrobe/Wardrobe_square_2.j
 import PromoBanner from "../components/PromoBanner";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import SEO from "../components/SEO";
 
 const features = [
   {
@@ -39,14 +40,33 @@ const features = [
 ];
 
 const closetTypes = [
-  { text: "Walk-In", bgImg: featureImage1 },
-  { text: "Reach-In", bgImg: featureImage2 },
-  { text: "Wardrobe", bgImg: featureImage3 },
+  { text: "Walk-In", bgImg: featureImage1, path: "closets/walkin" },
+  { text: "Reach-In", bgImg: featureImage2, path: "closets/reachin" },
+  { text: "Wardrobe", bgImg: featureImage3, path: "closets/wardrobe" },
 ];
 
 export default function ClosetsPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom Closets",
+    description: "High-quality custom closet designs tailored to your needs.",
+    image: "https://original-closets.netlify.app/images/closets/closet.jpg",
+    brand: { "@type": "Brand", name: "Original Closets" },
+    url: "https://original-closets.netlify.app/closets",
+  };
+
   return (
     <>
+      <SEO
+        title="Custom Closets - Original Closets "
+        description="Discover custom closet designs that maximize space and style."
+        keywords="custom closets, storage solutions, home organization"
+        image="https://original-closets.netlify.app/images/closets/closet.jpg"
+        url="https://original-closets.netlify.app/closets"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={closetImage} title="closets" />
       <PageContent
         title="TRANSFORM YOUR BASIC BEDROOM CLOSET"

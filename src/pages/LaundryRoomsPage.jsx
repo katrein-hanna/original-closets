@@ -4,10 +4,40 @@ import PageBanner from "../components/PageBanner";
 
 import laundryImage from "../assets/images/laundry/Laundry_2.jpg";
 import PromoBanner from "../components/PromoBanner";
+import SEO from "../components/SEO";
 
 export default function LaundryRoomsPage() {
+  //
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom Laundry Room Solutions",
+    description:
+      "Maximize your laundry room's potential with our custom solutions, including built-in cabinets, drying racks, and smart storage options.",
+    provider: {
+      "@type": "Organization",
+      name: "Original Closets",
+      url: "https://original-closets.netlify.app/",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: "Canada - Toronto",
+    },
+    serviceType: "Custom Laundry Room Design",
+    image: "https://original-closets.netlify.app/images/laundry/Laundry.jpg",
+    url: "https://original-closets.netlify.app/living-areas/laundry-rooms",
+  };
   return (
     <>
+      <SEO
+        title="Custom Laundry Room Solutions - Original Closets"
+        description="Transform your laundry room into an efficient and organized space with our custom laundry room solutions. Featuring built-in cabinets, drying racks, and ample storage."
+        keywords="laundry room storage, custom laundry solutions, built-in laundry cabinets, drying racks, laundry room organization, home laundry room, laundry room design"
+        image="https://original-closets.netlify.app/images/laundry/Laundry.jpg"
+        url="https://original-closets.netlify.app/living-areas/laundry-rooms"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={laundryImage} title="Laundry Rooms" />
       <PageContent
         title="Love doing laundry"

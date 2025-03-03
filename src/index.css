@@ -132,4 +132,16 @@ html {
     }
   }
   
+  @keyframes slowBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  .slow-bounce {
+    animation: slowBounce 3s infinite ease-in-out;
+  }
 }

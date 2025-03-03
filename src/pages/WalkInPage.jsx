@@ -8,6 +8,9 @@ import PageContent from "../components/PageContent";
 import ImageCard from "../components/ImageCard";
 import GallerySection from "../components/GallerySection";
 import PromoBanner from "../components/PromoBanner";
+import { Link } from "react-router-dom";
+import Button from "../components/Button";
+import SEO from "../components/SEO";
 
 const features = [
   {
@@ -30,8 +33,27 @@ const features = [
   },
 ];
 export default function WalkInPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Walk-In Closet Designs",
+    description:
+      "Beautifully crafted walk-in closets with modern storage solutions.",
+    serviceType: "Interior Design",
+    provider: { "@type": "LocalBusiness", name: "Original Closets" },
+  };
+
   return (
     <>
+      <SEO
+        title="Walk-In Closets - Original Closets"
+        description="Elegant and spacious walk-in closets with custom shelves and lighting."
+        keywords="walk-in closets, luxury closets, closet designs"
+        image="https://original-closets.netlify.app/images/closets/walkIn/Walkin_square_4.webp"
+        url="https://original-closets.netlify.app/closets/walkin"
+        favicon="/favicon.ico"
+        structuredData={structuredData}
+      />
       <PageBanner image={walkInImage} title="Walk-In closets" />
       <PageContent
         title="Luxurious feeling everyday"
@@ -44,9 +66,9 @@ export default function WalkInPage() {
         ))}
       </div>
       <div className="flex justify-center items-center py-10">
-        <button className="uppercase py-3 px-8 rounded-2xl border-2 border-text-hover text-secondary bg-text-hover font-bold transition-all hover:bg-secondary hover:text-text-hover  duration-300">
-          Learn More
-        </button>
+        <Link to="/contact-us">
+          <Button btnName="Learn More" />
+        </Link>
       </div>
 
       <PromoBanner />

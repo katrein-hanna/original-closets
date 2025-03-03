@@ -11,7 +11,7 @@ import image6 from "../assets/images/entryStorage/entry_2.jpg";
 export default function HeroSection() {
   const images = [
     { image: image3, title: "Home Offices" },
-    { image: image6, title: "Entry Storage" },
+    { image: image6, title: "Entryway Storage" },
     { image: image5, title: "Walk-In Closets" },
     { image: image4, title: "Kitchen Pantries" },
     { image: image2, title: "Laundry Rooms" },

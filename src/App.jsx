@@ -21,29 +21,33 @@ import ContactPage from "./pages/ContactPage";
 import RootLayout from "./layouts/RootLayout";
 import ClosetsLayout from "./layouts/ClosetsLayout";
 import LivingAreasLayout from "./layouts/LivingAreasLayout";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<RootLayout />}>
-      <Route index element={<HomePage />} />
-      <Route path="closets" element={<ClosetsLayout />}>
-        <Route index element={<ClosetsPage />} />
-        <Route path="walkin" element={<WalkInPage />} />
-        <Route path="reachin" element={<ReachInPage />} />
-        <Route path="wardrobe" element={<WardrobePage />} />
+    <>
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="closets" element={<ClosetsLayout />}>
+          <Route index element={<ClosetsPage />} />
+          <Route path="walkin" element={<WalkInPage />} />
+          <Route path="reachin" element={<ReachInPage />} />
+          <Route path="wardrobe" element={<WardrobePage />} />
+        </Route>
+        <Route path="living-areas" element={<LivingAreasLayout />}>
+          <Route index element={<LivingAreasPage />} />
+          <Route path="home-office" element={<HomeOfficePage />} />
+          <Route path="entryway-storage" element={<EntryStoragePage />} />
+          <Route path="murphy-beds" element={<MurphyBedsPage />} />
+          <Route path="laundry-rooms" element={<LaundryRoomsPage />} />
+          <Route path="kitchen-pantry" element={<KitchenPantryPage />} />
+        </Route>
+        <Route path="garages" element={<GaragesPage />} />
+        <Route path="gallery" element={<GalleryPage />} />
+        <Route path="contact-us" element={<ContactPage />} />
       </Route>
-      <Route path="living-areas" element={<LivingAreasLayout />}>
-        <Route index element={<LivingAreasPage />} />
-        <Route path="home-office" element={<HomeOfficePage />} />
-        <Route path="entryway-storage" element={<EntryStoragePage />} />
-        <Route path="murphy-beds" element={<MurphyBedsPage />} />
-        <Route path="laundry-rooms" element={<LaundryRoomsPage />} />
-        <Route path="kitchen-pantry" element={<KitchenPantryPage />} />
-      </Route>
-      <Route path="garages" element={<GaragesPage />} />
-      <Route path="gallery" element={<GalleryPage />} />
-      <Route path="contact-us" element={<ContactPage />} />
-    </Route>
+      <Route path="*" element={<NotFoundPage />} />
+    </>
   )
 );
 

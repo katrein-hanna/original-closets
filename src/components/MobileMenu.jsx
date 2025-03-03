@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FiMenu } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 export default function MobileMenu({ items }) {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [openSubMenus, setOpenSubMenus] = useState({});
+  const menuRef = useRef(null);
 
   const toggleDrawer = () => {
     setIsOpenMenu(!isOpenMenu);
@@ -18,6 +19,23 @@ export default function MobileMenu({ items }) {
       [index]: !prev[index],
     }));
   };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpenMenu(false);
+      }
+    };
+
+    if (isOpenMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpenMenu]);
 
   return (
     <>
@@ -34,6 +52,7 @@ export default function MobileMenu({ items }) {
       {/* Mobile Menu */}
       {isOpenMenu && (
         <ul
+          ref={menuRef} // Attach ref to menu container
           className="absolute left-0 top-24 w-full bg-secondary border border-light-gray shadow-lg shadow-primary/40 p-4 rounded-lg transition-transform duration-300"
           aria-hidden={!isOpenMenu}
         >
