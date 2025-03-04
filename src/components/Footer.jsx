@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/footerLogo.png";
+import logo from "../assets/footerLogo.svg";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
 import { BiMobile, BiPhone, BiTime } from "react-icons/bi";
