@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
+import logo from "../assets/1.svg";
 
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <header className="w-full mx-auto font-montserrat text-primary text-xl ">
       {/* Top Level Bar */}
-      <div className="hidden lg:flex justify-end items-center pt-5 gap-4 w-full max-w-7xl mx-auto pr-4">
+      <div className="hidden lg:flex justify-end items-center pt-5 gap-4 w-full max-w-7xl mx-auto pr-4 font-semibold">
         <a
           href="tel:+1111111111"
           className="text-hover  transition-all duration-200 hover:text-text-hover"
@@ -73,11 +73,11 @@ export default function Navbar() {
       </div>
 
       {/* NavBar */}
-      <nav className="relative px-6 flex justify-between items-center max-w-7xl mx-auto py-4">
+      <nav className="relative px-6 flex justify-between items-center max-w-7xl mx-auto py-2">
         <Link to="/">
           <img
             src={logo}
-            className="md:w-96 w-64 lg:pb-3 transition-transform duration-300 hover:scale-105"
+            className=" md:w-72 w-40  lg:-mt-8  transition-transform duration-300 hover:scale-105"
             alt="Logo"
           />
         </Link>

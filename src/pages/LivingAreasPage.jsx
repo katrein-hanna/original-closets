@@ -58,7 +58,7 @@ export default function LivingAreasPage() {
         keywords="custom living area storage, built-in shelves, wall units, entertainment center storage, home organization, closet systems"
         image="https://original-closets.netlify.app/images/closets/living-area.jpg"
         url="https://original-closets.netlify.app/living-areas"
-        favicon="/favicon.ico"
+        favicon="/favicons/sofa.ico"
         structuredData={structuredData}
       />
       <PageBanner image={livingAreasImage} title="Living Areas" />

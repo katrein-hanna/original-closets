@@ -28,7 +28,7 @@ export default function HomePage() {
         keywords="custom closets, storage solutions, home organization"
         image="https://original-closets.netlify.app/images/home-page.jpg"
         url="https://original-closets.netlify.app/"
-        favicon="/favicon.ico"
+        favicon="/favicons/home.ico"
         structuredData={structuredData}
       />
       <HeroSection />

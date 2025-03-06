@@ -36,7 +36,7 @@ export default function MurphyBedsPage() {
         keywords="Murphy beds, custom wall beds, space-saving beds, hidden beds, foldable beds, guest room solutions, home office bed"
         image="https://original-closets.netlify.app/images/wallbed/Murhpy_square_5.webp"
         url="https://original-closets.netlify.app/living-areas/murphy-beds"
-        favicon="/favicon.ico"
+        favicon="/favicons/bed.ico"
         structuredData={structuredData}
       />
       <PageBanner image={murphyImage} title="Murphy Beds" />

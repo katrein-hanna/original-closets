@@ -17,7 +17,7 @@ body {
   --color-buttons: #D4A056;
   --color-buttons-hover:#B88440;
   --color-link-hover: #187C8F;
-  --color-text-hover: #4C9A94;
+  --color-text-hover: #187C8F;
 
   --text-sm: 0.875rem;
   --text-sm--line-height: calc(1.25 / 0.875);

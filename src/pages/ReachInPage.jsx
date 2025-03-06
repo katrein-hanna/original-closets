@@ -35,7 +35,7 @@ export default function ReachInPage() {
         keywords="reach-in closets, small closet solutions, storage ideas"
         image="https://original-closets.netlify.app/images/closets/reachIn/Reachin_square.jpg"
         url="https://original-closets.netlify.app/closets/reachin"
-        favicon="/favicon.ico"
+        favicon="/favicons/reachin.ico"
         structuredData={structuredData}
       />
       <PageBanner image={reachInImage} title="Reach-In closets" />

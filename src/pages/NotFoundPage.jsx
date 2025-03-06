@@ -19,7 +19,7 @@ export default function NotFoundPage() {
         keywords="404 error, page not found"
         image="https://original-closets.netlify.app/not-found.svg"
         url="https://original-closets.netlify.app/*"
-        favicon="/favicon.ico"
+        favicon="/favicons/warning.ico"
         structuredData={structuredData}
       />
       <div className="flex flex-col items-center justify-center min-h-screen bg-light-gray text-center">

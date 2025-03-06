@@ -34,7 +34,7 @@ export default function KitchenPantryPage() {
         keywords="custom kitchen pantry, pantry storage solutions, modern pantry design, space-saving pantry, kitchen pantry cabinets, organized pantry shelving, walk-in pantry ideas, built-in pantry storage, functional pantry design, small pantry organization"
         image="https://original-closets.netlify.app/images/pantry/Pantry_square.jpg"
         url="https://original-closets.netlify.app/living-areas/kitchen-pantry"
-        favicon="/favicon.ico"
+        favicon="/favicons/pantry.ico"
         structuredData={structuredData}
       />
       <PageBanner image={pantryImage} title="Kitchen Pantry" />

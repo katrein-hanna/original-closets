@@ -35,7 +35,7 @@ export default function LaundryRoomsPage() {
         keywords="laundry room storage, custom laundry solutions, built-in laundry cabinets, drying racks, laundry room organization, home laundry room, laundry room design"
         image="https://original-closets.netlify.app/images/laundry/Laundry.jpg"
         url="https://original-closets.netlify.app/living-areas/laundry-rooms"
-        favicon="/favicon.ico"
+        favicon="/favicons/laundry.ico"
         structuredData={structuredData}
       />
       <PageBanner image={laundryImage} title="Laundry Rooms" />

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/footerLogo.svg";
+import logo from "../assets/2.svg";
 import { BsInstagram, BsTwitterX } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
 import { BiMobile, BiPhone, BiTime } from "react-icons/bi";
@@ -22,12 +22,12 @@ export default function Footer() {
       <div className="content-container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Logo and Description */}
         <div className="flex flex-col lg:col-span-1 md:col-span-2 items-center">
-          <Link to="/" className="-ml-5 md:mt-10">
-            <img src={logo} className="w-70 md:w-80 mb-4 " alt="Logo" />
+          <Link to="/" className="">
+            <img src={logo} className="md:w-56 w-40  " alt="Logo" />
           </Link>
           <p className=" text-center ">
-            Original Closets specializes in custom storage solutions for every
-            room in your home or garage.
+            Custom Closets & Storage SolutionsDiscover beautifully designed
+            custom closets for every room in your home.
           </p>
         </div>
 

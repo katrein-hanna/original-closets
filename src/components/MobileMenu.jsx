@@ -53,7 +53,7 @@ export default function MobileMenu({ items }) {
       {isOpenMenu && (
         <ul
           ref={menuRef} // Attach ref to menu container
-          className="absolute left-0 top-24 w-full bg-secondary border border-light-gray shadow-lg shadow-primary/40 p-4 rounded-lg transition-transform duration-300"
+          className="absolute left-0 top-26 w-full bg-secondary border border-light-gray shadow-lg shadow-primary/40 p-4 rounded-lg transition-transform duration-300"
           aria-hidden={!isOpenMenu}
         >
           {items.map((item, i) => {

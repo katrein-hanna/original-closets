@@ -62,7 +62,7 @@ export default function HomeOfficePage() {
         keywords="home office storage, custom office design, built-in desks, office shelving, home office organization, workspace design, office storage solutions"
         image="https://original-closets.netlify.app/images/office/Office_square_3.webp"
         url="https://original-closets.netlify.app/living-areas/home-office"
-        favicon="/favicon.ico"
+        favicon="/favicons/office.ico"
         structuredData={structuredData}
       />
       <PageBanner image={officeImage} title="Home Office" />

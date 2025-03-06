@@ -51,7 +51,7 @@ export default function WalkInPage() {
         keywords="walk-in closets, luxury closets, closet designs"
         image="https://original-closets.netlify.app/images/closets/walkIn/Walkin_square_4.webp"
         url="https://original-closets.netlify.app/closets/walkin"
-        favicon="/favicon.ico"
+        favicon="/favicons/walkin.ico"
         structuredData={structuredData}
       />
       <PageBanner image={walkInImage} title="Walk-In closets" />

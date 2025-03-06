@@ -64,7 +64,7 @@ export default function ClosetsPage() {
         keywords="custom closets, storage solutions, home organization"
         image="https://original-closets.netlify.app/images/closets/closet.jpg"
         url="https://original-closets.netlify.app/closets"
-        favicon="/favicon.ico"
+        favicon="/favicons/closet.ico"
         structuredData={structuredData}
       />
       <PageBanner image={closetImage} title="closets" />

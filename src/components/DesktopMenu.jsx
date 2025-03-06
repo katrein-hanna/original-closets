@@ -20,11 +20,11 @@ export default function DesktopMenu({ item }) {
       }}
       className="group relative z-50 h-fit w-fit"
     >
-      <div className="relative p-2 hover:text-text-hover">
+      <div className="relative p-2 hover:text-text-hover font-semibold">
         <NavLink
           to={item.path}
           className={({ isActive }) =>
-            `text-hover p-1  ${isActive ? "font-semibold text-text-hover" : ""}`
+            `text-hover p-1  ${isActive ? "font-bold text-text-hover" : ""}`
           }
           aria-haspopup={item.submenu ? "true" : "false"}
           aria-expanded={showFlyout ? "true" : "false"}

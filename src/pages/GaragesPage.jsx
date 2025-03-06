@@ -38,7 +38,7 @@ export default function GaragesPage() {
         keywords="garage storage, custom garage solutions, built-in garage cabinets, garage shelving, garage organization, garage storage systems, home garage design"
         image="https://original-closets.netlify.app/images/garage/garage_cabbinets.jpg"
         url="https://original-closets.netlify.app/garages"
-        favicon="/favicon.ico"
+        favicon="/favicons/garage.ico"
         structuredData={structuredData}
       />
       <PageBanner image={garageImage} title="Garages" />

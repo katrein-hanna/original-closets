@@ -55,7 +55,7 @@ export default function WardrobePage() {
         keywords="Custom wardrobes,Built-in wardrobe,Modern wardrobe design,Closet organization,Stylish wardrobe solutions,Space-saving wardrobes,Luxury wardrobe designs,Wardrobe storage solutions,Fitted wardrobes,Sliding door wardrobes, storage ideas"
         image="https://original-closets.netlify.app/images/closets/wardrobe/wardrobe.jpg"
         url="https://original-closets.netlify.app/closets/wardrobe"
-        favicon="/favicon.ico"
+        favicon="/favicons/wardrobe.ico"
         structuredData={structuredData}
       />
       <PageBanner image={wardrobeImage} title="Wardrobe closets" />

@@ -37,7 +37,7 @@ export default function EntryStoragePage() {
         keywords="entry storage, entryway organization, custom closets, shoe racks, coat storage, hallway storage, built-in entry cabinets, mudroom solutions"
         image="https://original-closets.netlify.app/images/entryStorage/entry_1.jpg"
         url="https://original-closets.netlify.app/living-areas/entryway-storage"
-        favicon="/favicon.ico"
+        favicon="/favicons/entryway.ico"
         structuredData={structuredData}
       />
       <PageBanner image={entryImage} title="Entry Storage" />

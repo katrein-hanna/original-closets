@@ -2,13 +2,13 @@
 // import React from "react";
 
 export default function SEO({
-  title = "Default Title",
-  description = "Default description",
-  keywords = "closets",
-  image = "/default-image.jpg",
-  url = "https://example.com",
+  title = "Original Closets - Custom Closets & Storage Solutions",
+  description = "Discover beautifully designed custom closets for every room in your home.",
+  keywords = "custom closets, storage solutions, home organization",
+  image = "https://original-closets.netlify.app/images/home-page.jpg",
+  url = "https://original-closets.netlify.app/",
   structuredData,
-  favicon,
+  favicon = "/favicons/home.ico",
 }) {
   return (
     <>

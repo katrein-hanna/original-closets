@@ -28,6 +28,7 @@ export default function ContactPage() {
         keywords="contact, custom closets consultation, closet design"
         image="https://original-closets.netlify.app/images/pantry/Pantry_square_3.webp"
         url="https://original-closets.netlify.app/contact-us"
+        favicon="/favicons/envelope.ico"
         structuredData={structuredData}
       />
       <PageBanner image={contactImage} title="Contact" />
