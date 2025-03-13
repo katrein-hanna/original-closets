@@ -43,7 +43,7 @@ export default function ProcessSection() {
     <section className="main-container py-10 bg-light-gray text-primary ">
       <div className="content-container text-center">
         <h1>Our Process</h1>
-        <p className="uppercase  text-primary/70 mt-2">
+        <p className="uppercase  font-medium text-primary/70 mt-2">
           We follow a simple & effective four-step process.
         </p>
 

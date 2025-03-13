@@ -31,7 +31,7 @@ export default function ServicesSection() {
     <section className="main-container py-16 bg-secondary">
       <div className="content-container mx-auto text-center">
         <h1>Our Services</h1>
-        <p className="uppercase text-primary/70 mt-2">
+        <p className="uppercase  font-medium text-primary/70 mt-2">
           Explore our range of solutions for a well-organized home.
         </p>
 

@@ -38,6 +38,20 @@ export default function HomePage() {
       <ProcessSection />
       <DisplayWorkSection />
       <TestimonialsSection />
+      <section className="main-container py-10 bg-secondary">
+        <div className="content-container mx-auto text-center">
+          <h1>Testimonials</h1>
+          {/* Elfsight Google Reviews | Untitled Google Reviews   */}
+          <script
+            src="https://static.elfsight.com/platform/platform.js"
+            async
+          ></script>
+          <div
+            className="elfsight-app-16c351b3-1633-4fe4-bf9e-3b61710b0077"
+            data-elfsight-app-lazy
+          ></div>
+        </div>
+      </section>
       {/* Contact Section */}
       <div className="pt-10 ">
         <h1>Contact Us</h1>

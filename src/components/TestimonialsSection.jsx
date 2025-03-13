@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Button from "./Button";
 
 const testimonials = [
   {
     quote:
-      "Original Closets team is professional, prompt and offer competitive pricing. They did a wonderful job for our custom closets. Highly recommended.",
-    name: "Abhay Ranjan",
+      "MANHAL is skilled and professional. He takes pride in his work and is committed to the end. Would definitely recommend",
+    name: "Jan6987",
   },
   {
     quote:
-      " Thank you for such great service and outstanding work! Would definitely recommend!",
-    name: "Sarah Thompson",
+      "We had an amazing experience with original closets (quality and price ),Manhal was very professional, I'll definitely be using them again, they have our highest recommendation.",
+    name: "90Suhair Makdesi",
   },
   {
     quote:
-      "Great quality work at very competitive prices! we had some restrictions in our condo building but they managed to accommodate and complete the job faster than we had expected.  ",
-    name: "John Doe",
+      "Manhal took the time to listen to what we wanted/needed. He created a beautifully organized space with professional workmanship and great communication throughout the process! We highly recommend him and will use his services for future projects!",
+    name: "Shelley Kossatz",
   },
 ];
 
@@ -52,11 +53,13 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="main-container py-10 lg:h-[350px] md:h-[400px] bg-light-gray">
+    <section className="main-container py-10  md:h-[500px] bg-light-gray">
       <div className="content-container mx-auto text-primary">
         <h1>Testimonials</h1>
-        <p className="uppercase ">Our trusted clients opinions</p>
-        <div className="lg:h-[150px] md:h-[200px]">
+        <p className="uppercase font-medium text-primary/70 mt-2">
+          What Our Customers Say
+        </p>
+        <div className="md:h-[200px]">
           <div className="flex flex-col items-center justify-center text-center p-8">
             {/* Animated Quote Text */}
             <motion.blockquote
@@ -99,6 +102,14 @@ export default function TestimonialsSection() {
           >
             <FaChevronRight className="text-secondary" />
           </button>
+        </div>
+        <div className="flex justify-center items-center mx-auto mt-8">
+          <a
+            href="https://www.google.com/search?hl=en-US&gl=us&q=Original+closets&ludocid=1195600758612025218&lsig=AB86z5V-Q7soYLA4ds07l7UczxTJ#lrd=0x8220d6bc9ff3ac5f:0x1097a08e2e41df82,3"
+            target="_blank"
+          >
+            <Button btnName="Review us on Google" />
+          </a>
         </div>
       </div>
     </section>

@@ -31,7 +31,7 @@ export default function DisplayWorkSection() {
     <section className="main-container py-10 bg-secondary">
       <div className="content-container mx-auto text-center">
         <h1>Custom Closets</h1>
-        <p className="uppercase  text-primary/70 mt-2">
+        <p className="uppercase font-medium text-primary/70 mt-2">
           Designed to fit your needs & budget
         </p>
 
